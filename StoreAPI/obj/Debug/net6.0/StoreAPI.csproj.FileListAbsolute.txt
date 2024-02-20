@@ -1,0 +1,6 @@
+C:\Users\chith\source\repos\StoreAPI\StoreAPI\obj\Debug\net6.0\StoreAPI.csproj.AssemblyReference.cache
+C:\Users\chith\source\repos\StoreAPI\StoreAPI\obj\Debug\net6.0\StoreAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chith\source\repos\StoreAPI\StoreAPI\obj\Debug\net6.0\StoreAPI.AssemblyInfoInputs.cache
+C:\Users\chith\source\repos\StoreAPI\StoreAPI\obj\Debug\net6.0\StoreAPI.AssemblyInfo.cs
+C:\Users\chith\source\repos\StoreAPI\StoreAPI\obj\Debug\net6.0\StoreAPI.csproj.CoreCompileInputs.cache
+C:\Users\chith\source\repos\StoreAPI\StoreAPI\obj\Debug\net6.0\StoreAPI.MvcApplicationPartsAssemblyInfo.cache

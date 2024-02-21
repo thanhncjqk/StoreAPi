@@ -1,14 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "PTC36VkXH7pbP+r/6gLOSGRAzr9KQgWhwwmHcfRvHXnU8CTBJXDfi3TkjKY2rW1fmfZZss6HwmDreVQnV8W6pg==",
+  "dgSpecHash": "Zlhh5RS8xUmE/Io6P09TcLN90cwbw8+VK4YDo6Cl9ox2Ojke6CzHwocE9C7poUQOZl2DGGZNmYtrKtpGyETyEA==",
   "success": true,
   "projectFilePath": "C:\\Users\\chith\\source\\repos\\StoreAPI\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chith\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
     "C:\\Users\\chith\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
-    "C:\\Users\\chith\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
-    "C:\\Users\\chith\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
-    "C:\\Users\\chith\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\chith\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512"
   ],
   "logs": []
 }

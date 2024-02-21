@@ -15,9 +15,9 @@ namespace BusinessLayer.CategoryBL
     public class CategoryBL : BaseStoreBL<Category>, ICategoryBL
     {
         List<string> Errors = new List<string>();
-        private ICategoryBL _categoryDL;
+        private ICategoryDL _categoryDL;
 
-        public CategoryBL(ICategoryBL categoryDL) : base(categoryDL)
+        public CategoryBL(ICategoryDL categoryDL) : base(categoryDL)
         {
             _categoryDL = categoryDL;
         }

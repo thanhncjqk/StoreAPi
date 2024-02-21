@@ -17,7 +17,7 @@ namespace BusinessLayer.OrderDetailBL
         List<string> Errors = new List<string>();
         private IOrderDetailDL _orderDetailDL;
         
-        public OrderDetailBL(OrderDetailDL orderDetailDL) : base(orderDetailDL)
+        public OrderDetailBL(IOrderDetailDL orderDetailDL) : base(orderDetailDL)
         {
             _orderDetailDL = orderDetailDL;
         }

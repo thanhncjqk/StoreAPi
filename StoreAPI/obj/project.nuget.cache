@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+kSjyL6O0c5YRqP7ot+i2UZcAZy43rbT6DCvqSqBrVgZZSYQsxZU0FMwqi1n1Uf/cDeqoM0MV4fY6My/u71hsA==",
+  "dgSpecHash": "RmfN9qsi1fg18gPmP71YoLgNgt8KaaYvAzIdaIsSaEHpZ1OnN7EP9hrRloBkthkzaKeuCHGEdzGJHxGq8k0PuQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\chith\\source\\repos\\StoreAPI\\StoreAPI\\StoreAPI.csproj",
   "expectedPackageFiles": [
@@ -12,9 +12,7 @@
     "C:\\Users\\chith\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\chith\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\chith\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
-    "C:\\Users\\chith\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
-    "C:\\Users\\chith\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
-    "C:\\Users\\chith\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\chith\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
   ],
   "logs": []
 }

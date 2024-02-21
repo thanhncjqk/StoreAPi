@@ -101,6 +101,11 @@ namespace BusinessLayer.BaseStoreBL
         {
             throw new NotImplementedException();
         }
+
+        public PagingData<T> GetFilterRecords(string? search, string v, int pageSize = 10, int pageNumber = 1)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

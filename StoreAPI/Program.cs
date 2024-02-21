@@ -45,6 +45,26 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 DatabaseContext.ConnectionString = builder.Configuration.GetConnectionString("MySqlConnection");
+builder.Services.AddControllers().ConfigureApiBehaviorOptions(option =>
+{
+    option.SuppressModelStateInvalidFilter = true;
+});
+
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy(name: MyAllowSpecificOrigins,
+                    policy =>
+                    {
+                        policy.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
+});
+DatabaseContext.ConnectionString = builder.Configuration.GetConnectionString("MySqlConnection");
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 
 
 var app = builder.Build();

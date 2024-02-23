@@ -42,7 +42,7 @@ namespace StoreAPI.Controllers
         {
             try
             {
-                var records = _BaseStoreBL.GetFilterRecords(search, pageSize, pageNumber);
+                var records = _BaseStoreBL.FilterRecords(search, pageSize, pageNumber);
 
                 if (records != null)
                 {

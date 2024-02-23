@@ -9,7 +9,7 @@ namespace BusinessLayer.BaseStoreBL
 {
     public interface IBaseStoreBL<T>
     {
-        public PagingData<T> GetFilterRecords(string? search, string v, int pageSize = 10, int pageNumber = 1);
+        public PagingData<T> FilterRecords(string? search, int pageSize = 10, int pageNumber = 1);
 
         public T GetRecordById(int id);
 
@@ -18,7 +18,6 @@ namespace BusinessLayer.BaseStoreBL
         public int UpdateOneRecord(int id, T record);
 
         public int DeleteMutirecord(List<int> ids);
-        PagingData<T> GetFilterRecords(string? search, int pageSize, int pageNumber);
     }
 }
 

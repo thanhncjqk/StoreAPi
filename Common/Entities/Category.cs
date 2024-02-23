@@ -10,7 +10,7 @@ namespace Common.Entities
     public class Category : Base
     {
         [Key]
-        public Guid CategoryId { get; set; }  
+        public Guid CategoryId { get; set; } = Guid.NewGuid();
         public String CategoryName { get; set; }
     }
 }

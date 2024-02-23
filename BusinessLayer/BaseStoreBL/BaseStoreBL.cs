@@ -92,12 +92,7 @@ namespace BusinessLayer.BaseStoreBL
             return $"{year}-{month}-{day}";
         }
 
-        PagingData<T> IBaseStoreBL<T>.GetFilterRecords(string? search, int pageSize, int pageNumber)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PagingData<T> GetFilterRecords(string? search, string v, int pageSize = 10, int pageNumber = 1)
+        public PagingData<T> FilterRecords(string? search, int pageSize = 10, int pageNumber = 1)
         {
             throw new NotImplementedException();
         }

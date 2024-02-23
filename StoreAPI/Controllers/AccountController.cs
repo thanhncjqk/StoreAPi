@@ -5,13 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace StoreAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AccountControllers : BaseStoreControllers<Account>
+    //[Route("api/[controller]")
+    //[ApiController]
+    public class AccountController : BaseStoreController<Account>
     {
         private IAccountBL _AccountBL;
 
-        public AccountControllers(IAccountBL AccountBL) : base(AccountBL)
+        public AccountController(IAccountBL AccountBL) : base(AccountBL)
         {
             _AccountBL = AccountBL;
         }

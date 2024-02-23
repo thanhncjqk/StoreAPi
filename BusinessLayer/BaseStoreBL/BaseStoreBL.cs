@@ -40,11 +40,6 @@ namespace BusinessLayer.BaseStoreBL
             return _baseDL.DeleteMutiRecords(ids);
         }
 
-        public int DeleteOneRecord(int id)
-        {
-            return _baseDL.DeleteOneRecord(id);
-        }
-
         public virtual PagingData<T> GetFilterRecords(string? search, int pageSize = 10, int pageNumber = 1)
         {
             int offSet = (pageNumber - 1) * pageSize;

@@ -7,11 +7,11 @@ namespace StoreAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryControllers : BaseStoreControllers<Category>
+    public class CategoryController : BaseStoreController<Category>
     {
         private ICategoryBL _CategoryBL;
 
-        public CategoryControllers(ICategoryBL CategoryBL) : base (CategoryBL)
+        public CategoryController(ICategoryBL CategoryBL) : base (CategoryBL)
         {
             _CategoryBL = CategoryBL;
         }

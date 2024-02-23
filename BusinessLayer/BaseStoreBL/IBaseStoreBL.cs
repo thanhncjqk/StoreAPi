@@ -13,8 +13,6 @@ namespace BusinessLayer.BaseStoreBL
 
         public T GetRecordById(int id);
 
-        public int DeleteOneRecord(int id);
-
         public int InsertOneRecord(T record);
 
         public int UpdateOneRecord(int id, T record);

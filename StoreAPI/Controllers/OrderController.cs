@@ -7,11 +7,11 @@ namespace StoreAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderControllers : BaseStoreControllers<Order>
+    public class OrderController : BaseStoreController<Order>
     {
         private IOrderBL _OrderBL;
 
-        public OrderControllers(IOrderBL OrderBL) : base(OrderBL)
+        public OrderController(IOrderBL OrderBL) : base(OrderBL)
         {
             _OrderBL = OrderBL;
         }

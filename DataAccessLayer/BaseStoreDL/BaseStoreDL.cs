@@ -31,23 +31,6 @@ namespace DataAccessLayer.BaseStoreDL
             }
         }
 
-        public int DeleteOneRecord(int id)
-        {
-            string className = typeof(T).Name;
-            string stored = $"Proc_{className}_DeleteOne";
-
-            var parameter = new DynamicParameters();
-
-            parameter.Add($"@${className}Id", id);
-
-            using (var mySqlConnection = new MySqlConnection(DatabaseContext.ConnectionString))
-            {
-                int a = mySqlConnection.Execute(stored, parameter, commandType: System.Data.CommandType.StoredProcedure);
-
-                return a;
-            }
-        }
-
         public PagingData<T> GetFilterRecords(string? search, string? sort, int offSet = 0, int limit = 10)
         {
             string className = typeof(T).Name;
@@ -97,8 +80,15 @@ namespace DataAccessLayer.BaseStoreDL
             string className = typeof(T).Name;
             string storedProc = $"Proc_{className}_InsertOne";
 
-            var parameters = SetDynamicParameters(record);
-
+            var parameters = new DynamicParameters();
+            var props = typeof(T).GetProperties();
+            foreach (var prop in props)
+            {
+                var propName = $"${prop.Name}";
+                var propValue = prop.GetValue(record) ;
+                parameters.Add(propName, propValue);
+            }
+            
             using (var mySqlConnection = new MySqlConnection(DatabaseContext.ConnectionString))
             {
                 int affectedRow = mySqlConnection.Execute(storedProc, parameters, commandType: System.Data.CommandType.StoredProcedure);

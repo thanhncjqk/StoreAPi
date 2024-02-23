@@ -7,13 +7,13 @@ namespace StoreAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Brand_DetailController : BaseStoreControllers<Brand>
+    public class BrandController : BaseStoreController<Brand>
     {
-        private IBrandBL _BrandBL;
+        private IBrandBL _brandBL;
 
-        public Brand_DetailController(IBrandBL BrandBL) : base (BrandBL)
+        public BrandController(IBrandBL brandBL) : base (brandBL)
         {
-            _BrandBL = BrandBL;
+            _brandBL = brandBL;
         }
     }
 }

@@ -7,11 +7,11 @@ namespace StoreAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseStoreControllers<T> : ControllerBase
+    public class BaseStoreController<T> : ControllerBase
     {
         private IBaseStoreBL<T> _BaseStoreBL;
 
-        public BaseStoreControllers(IBaseStoreBL<T> BaseStoreBL)
+        public BaseStoreController(IBaseStoreBL<T> BaseStoreBL)
         {
             _BaseStoreBL = BaseStoreBL;
         }
@@ -62,30 +62,6 @@ namespace StoreAPI.Controllers
                 };
                 return StatusCode(400, res);
             }
-            catch (Exception ex)
-            {
-
-                return StatusCode(500, ex.Message);
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult DeleteOneRecord([FromRoute] int id)
-        {
-            try
-            {
-                int a = _BaseStoreBL.DeleteOneRecord(id);
-
-                if (a > 0)
-                {
-                    return StatusCode(200, id);
-                }
-                else
-                {
-                    return StatusCode(500, "e001");
-                }
-            }
-
             catch (Exception ex)
             {
 

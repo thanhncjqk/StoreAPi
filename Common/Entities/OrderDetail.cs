@@ -10,7 +10,7 @@ namespace Common.Entities
     public class OrderDetail : Base
     {
         [Key]
-        public Guid OrderDetailId { get; set; }
+        public Guid OrderDetailId { get; set; } = Guid.NewGuid();
         public String OrderId { get; set; }
         public String ProductId { get; set; }
         public int Quantity { get; set; }

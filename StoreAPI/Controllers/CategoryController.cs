@@ -9,11 +9,11 @@ namespace StoreAPI.Controllers
     [ApiController]
     public class CategoryController : BaseStoreController<Category>
     {
-        private ICategoryBL _CategoryBL;
+        private ICategoryBL _categoryBL;
 
-        public CategoryController(ICategoryBL CategoryBL) : base (CategoryBL)
+        public CategoryController(ICategoryBL categoryBL) : base (categoryBL)
         {
-            _CategoryBL = CategoryBL;
+            _categoryBL = categoryBL;
         }
     }
 }

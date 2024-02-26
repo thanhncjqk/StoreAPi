@@ -10,7 +10,7 @@ namespace Common.Entities
     public class Order : Base
     {
         [Key]
-        public Guid OrderId { get; set; }
+        public Guid OrderId { get; set; } = Guid.NewGuid();
         public String AccountId { get; set; }   
         public String RecipientName { get; set; }
         public String Address { get; set; }

@@ -11,13 +11,13 @@ namespace DataAccessLayer.BaseStoreDL
     {
         public PagingData<T> GetFilterRecords(string? search, string? sort, int offSet = 0, int limit = 10);
 
-        public T GetRecordById(int id);
+        public T GetRecordById(Guid id);
 
         public int InsertOneRecord(T record);
 
-        public int UpdateOneRecord(int id, T record);
+        public Guid UpdateOneRecord(Guid id, T record);
 
-        public int DeleteMutiRecords(List<int> ids);
+        public int DeleteMutiRecords(List<Guid> ids);
 
     }
 }

@@ -17,25 +17,12 @@ namespace BusinessLayer.BaseStoreBL
     public class BaseStoreBL<T> : IBaseStoreBL<T>
     {
         private IBaseStoreDL<T> _baseDL;
-        private IBrandDL brandDL;
-        private ICategoryBL categoryDL;
-
         public BaseStoreBL(IBaseStoreDL<T> baseDL)
         {
             _baseDL = baseDL;
         }
 
-        public BaseStoreBL(IBrandDL brandDL)
-        {
-            this.brandDL = brandDL;
-        }
-
-        public BaseStoreBL(ICategoryBL categoryDL)
-        {
-            this.categoryDL = categoryDL;
-        }
-
-        public int DeleteMutirecord(List<int> ids)
+        public int DeleteMutirecord(List<Guid> ids)
         {
             return _baseDL.DeleteMutiRecords(ids);
         }
@@ -46,7 +33,7 @@ namespace BusinessLayer.BaseStoreBL
             return _baseDL.GetFilterRecords(search, "ModifiedDate DESC", offSet, pageSize);
         }
 
-        public T GetRecordById(int id)
+        public T GetRecordById(Guid id)
         {
             return _baseDL.GetRecordById(id);
         }
@@ -57,7 +44,7 @@ namespace BusinessLayer.BaseStoreBL
             return _baseDL.InsertOneRecord(record);
         }
 
-        public int UpdateOneRecord(int id, T record)
+        public Guid UpdateOneRecord(Guid id, T record)
         {
             string className = typeof(T).Name;
             var primaryKeyProp = typeof(T).GetProperties().FirstOrDefault(prop => prop.GetCustomAttributes(typeof(KeyAttribute), true).Count() > 0);

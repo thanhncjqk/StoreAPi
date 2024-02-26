@@ -10,7 +10,7 @@ namespace Common.Entities
     public class Brand : Base
     {
         [Key]
-        public Guid BrandId { get; set; }
+        public Guid BrandId { get; set; } = Guid.NewGuid();
         public String BrandName { get; set; }
 
     }

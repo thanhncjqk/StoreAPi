@@ -12,7 +12,7 @@ namespace DataAccessLayer.BaseStoreDL
 {
     public class BaseStoreDL<T> : IBaseStoreDL<T>
     {
-        public int DeleteMutiRecords(List<int> ids)
+        public int DeleteMutiRecords(List<Guid> ids)
         {
             string className = typeof(T).Name;
             string stored = $"Proc_{className}_DeleteMultiple";
@@ -56,7 +56,7 @@ namespace DataAccessLayer.BaseStoreDL
 
         }
 
-        public virtual T GetRecordById(int id)
+        public virtual T GetRecordById(Guid id)
         {
             string className = typeof(T).Name;
             string stored = $"Proc_{className}_GetByID";
@@ -80,19 +80,11 @@ namespace DataAccessLayer.BaseStoreDL
             string className = typeof(T).Name;
             string storedProc = $"Proc_{className}_InsertOne";
 
-            var parameters = new DynamicParameters();
-            var props = typeof(T).GetProperties();
-            foreach (var prop in props)
-            {
-                var propName = $"${prop.Name}";
-                var propValue = prop.GetValue(record) ;
-                parameters.Add(propName, propValue);
-            }
-            
+            var parameters = SetDynamicParameters(record);
+
             using (var mySqlConnection = new MySqlConnection(DatabaseContext.ConnectionString))
             {
                 int affectedRow = mySqlConnection.Execute(storedProc, parameters, commandType: System.Data.CommandType.StoredProcedure);
-
 
                 return affectedRow;
             }
@@ -113,7 +105,7 @@ namespace DataAccessLayer.BaseStoreDL
             return parameters;
         }
 
-        public int UpdateOneRecord(int id, T record)
+        public Guid UpdateOneRecord(Guid id, T record)
         {
             string className = typeof(T).Name;
             string storedProc = $"Proc_{className}_UpdateOne";
@@ -124,10 +116,10 @@ namespace DataAccessLayer.BaseStoreDL
             {
                 int affectedRow = mySqlConnection.Execute(storedProc, parameters, commandType: System.Data.CommandType.StoredProcedure);
 
-                var result = 0;
+                Guid result = Guid.Empty;
                 if (affectedRow > 0)
                 {
-                    result = (int)id;
+                    result = (Guid)id;
                 }
                 return result;
             }

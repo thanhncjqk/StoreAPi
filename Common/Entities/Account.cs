@@ -10,7 +10,7 @@ namespace Common.Entities
     public class Account : Base
     {
         [Key]
-        public Guid AccountId { get; set; }
+        public Guid AccountId { get; set; } = Guid.NewGuid();
         public string FullName { get; set; }
         public string Address { get; set; }
         public string PhoneNo { get; set; }

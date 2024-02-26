@@ -9,18 +9,18 @@ namespace StoreAPI.Controllers
     [ApiController]
     public class BaseStoreController<T> : ControllerBase
     {
-        private IBaseStoreBL<T> _BaseStoreBL;
+        private IBaseStoreBL<T> _baseStoreBL;
 
-        public BaseStoreController(IBaseStoreBL<T> BaseStoreBL)
+        public BaseStoreController(IBaseStoreBL<T> baseStoreBL)
         {
-            _BaseStoreBL = BaseStoreBL;
+            _baseStoreBL = baseStoreBL;
         }
         [HttpGet("{id}")]
-        public virtual IActionResult GetRecordById([FromRoute] int id)
+        public virtual IActionResult GetRecordById([FromRoute] Guid id)
         {
             try
             {
-                var record = _BaseStoreBL.GetRecordById(id);
+                var record = _baseStoreBL.GetRecordById(id);
 
                 if (record != null)
                 {
@@ -37,12 +37,12 @@ namespace StoreAPI.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpPost("filter")]
         public IActionResult GetFilterRecords([FromQuery] string? search, [FromQuery] int pageSize = 10, [FromQuery] int pageNumber = 1)
         {
             try
             {
-                var records = _BaseStoreBL.FilterRecords(search, pageSize, pageNumber);
+                var records = _baseStoreBL.FilterRecords(search, pageSize, pageNumber);
 
                 if (records != null)
                 {
@@ -74,7 +74,7 @@ namespace StoreAPI.Controllers
         {
             try
             {
-                int affectedRow = _BaseStoreBL.InsertOneRecord(record);
+                int affectedRow = _baseStoreBL.InsertOneRecord(record);
 
                 if (affectedRow != 0)
                 {
@@ -102,13 +102,13 @@ namespace StoreAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public virtual IActionResult UpdateOneRecord([FromRoute] int id, [FromBody] T record)
+        public virtual IActionResult UpdateOneRecord([FromRoute] Guid id, [FromBody] T record)
         {
             try
             {
-                var recodId = _BaseStoreBL.UpdateOneRecord(id, record);
+                Guid recodId = _baseStoreBL.UpdateOneRecord(id, record);
 
-                if (recodId != 0)
+                if (recodId != Guid.Empty)
                 {
                     return StatusCode(200, recodId);
                 }
@@ -134,11 +134,11 @@ namespace StoreAPI.Controllers
         }
 
         [HttpPost("multi_delete")]
-        public virtual IActionResult DeleteMultiRecord([FromBody] List<int> ids)
+        public virtual IActionResult DeleteMultiRecord([FromBody] List<Guid> ids)
         {
             try
             {
-                var a = _BaseStoreBL.DeleteMutirecord(ids);
+                var a = _baseStoreBL.DeleteMutirecord(ids);
 
                 if (a > 0)
                 {

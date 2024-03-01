@@ -18,6 +18,7 @@ namespace BusinessLayer.BaseStoreBL
         public Guid UpdateOneRecord(Guid id, T record);
 
         public int DeleteMutirecord(List<Guid> ids);
+        
     }
 }
 

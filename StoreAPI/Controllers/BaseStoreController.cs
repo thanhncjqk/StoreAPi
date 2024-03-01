@@ -36,9 +36,8 @@ namespace StoreAPI.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-
-        [HttpPost("filter")]
-        public IActionResult GetFilterRecords([FromQuery] string? search, [FromQuery] int pageSize = 10, [FromQuery] int pageNumber = 1)
+        [HttpGet]
+        public IActionResult FilterRecords([FromQuery] string? search, [FromQuery] int pageSize = 10, [FromQuery] int pageNumber = 1)
         {
             try
             {
@@ -68,7 +67,6 @@ namespace StoreAPI.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-
         [HttpPost]
         public virtual IActionResult InsertOneRecord([FromBody] T record)
         {
